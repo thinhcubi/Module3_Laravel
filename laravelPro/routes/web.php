@@ -41,5 +41,19 @@ Route::post('/calculator',function (\Illuminate\Http\Request $request){
     $data = [$listPrice,$discountPercent,$discountAmount,$productDescription,$discountPrice];
    return view('show-discount-amount',compact('data'));
 });
+Route::get('/dictionary',function (){
+   return view('dictionary');
+});
+Route::post('/dictionary',function(\Illuminate\Http\Request $request){
+   $usa = $request->english;
+   $array = ['dog' => 'chó','cat' => 'mèo','tiger' => 'hổ'];
+   $result = null;
+   foreach ($array as $key => $item){
+       if($usa == $key){
+           $result = $item;
+           return view('result',compact('result','usa'));
+       }
+       }
+});
 
 
