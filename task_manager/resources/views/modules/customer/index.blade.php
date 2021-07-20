@@ -6,6 +6,7 @@
 </head>
 <body>
 <h1>Danh sách khách hàng</h1>
+<a href="{{route('customer.create')}}" class="button">Thêm mới</a>
 <table border="1">
     <thead>
     <tr>
@@ -23,7 +24,7 @@
         <td>01234567890</td>
         <td>email.test@mail.com</td>
         <td>
-            <a href="#">Xem</a> | <a href="#">Sửa</a> | <a href="#">Xóa</a>
+            <a href="{{route('customer.show')}}">Xem</a> | <a href="#">Sửa</a> | <a href="#">Xóa</a>
         </td>
     </tr>
     <tr>

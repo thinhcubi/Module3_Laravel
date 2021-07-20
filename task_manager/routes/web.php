@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,21 +18,12 @@ use Illuminate\Support\Facades\Route;
 //    return view('modules.customer.index');
 //});
 Route::prefix('customer')->group(function (){
-   Route::get('index',function (){
-    return view('modules.customer.index');
-   });
-   Route::get('create',function (){
-
-   });
+   Route::get('/index',[HomeController::class,'index']);
+  Route::get('/create',[HomeController::class,'create'])->name('customer.create');
    Route::get('store',function (){
 
    });
-   Route::get('{id}/show',function (){
-
-   });
-   Route::get('{id}/edit',function (){
-
-   });
+  Route::get('/show',[HomeController::class,'show'])->name('customer.show');
     Route::get('{id}/update',function (){
 
    });
