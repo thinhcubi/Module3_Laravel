@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 //    return view('modules.customer.index');
 //});
 Route::prefix('customer')->group(function (){
-   Route::get('/index',[HomeController::class,'index']);
+   Route::get('/index',[CustomerController::class,'index']);
   Route::get('/create',[HomeController::class,'create'])->name('customer.create');
    Route::get('store',function (){
 
@@ -34,3 +35,5 @@ Route::prefix('customer')->group(function (){
 
    });
 });
+
+
